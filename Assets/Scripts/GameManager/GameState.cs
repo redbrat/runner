@@ -301,7 +301,7 @@ public class GameState : AState
 		pauseButton.gameObject.SetActive(false);
         pauseMenu.gameObject.SetActive (displayMenu);
 		wholeUI.gameObject.SetActive(false);
-		m_WasMoving = trackManager.isMoving;
+@		m_WasMoving = trackManager.isMoving;
 		trackManager.StopMove();
 	}
 

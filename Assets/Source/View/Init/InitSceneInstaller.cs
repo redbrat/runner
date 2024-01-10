@@ -1,8 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Source.View.Init.ScenesManagement;
+using Zenject;
 
-public class InitSceneInstaller : MonoBehaviour
+namespace Source.View.Init
 {
-    
+    public class InitSceneInstaller : MonoInstaller
+    {
+        public override void InstallBindings()
+        {
+            Container.Bind<ScenesManager>().AsSingle();
+        }
+    }
 }
