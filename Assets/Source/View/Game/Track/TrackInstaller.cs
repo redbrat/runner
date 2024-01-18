@@ -5,8 +5,6 @@ namespace Source.View.Game.Track
 {
     public class TrackInstaller : MonoInstaller
     {
-        [Inject] private readonly IFactory<int, Track> trackFactory;
-
         [SerializeField] private TrackScroller trackScroller;
         [SerializeField, Tooltip("How much section there will be")] private int trackSectionsLength = 100;
 
