@@ -1,24 +1,22 @@
 using System;
+using JetBrains.Annotations;
+using Source.Game.Input;
 using UnityEngine;
+using Zenject;
 
 namespace Source.Game.Player
 {
-    public class PlayerInputController : MonoBehaviour
+    [UsedImplicitly]
+    public class ChangeLaneController
     {
-        public event Action<int> LaneChanged; 
+        public event Action<int> LaneChanged;
 
         private int lane;
-        
-        private void Update()
+
+        [Inject]
+        private void Init(IHorizontalInputController horizontalInputController)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                ChangeLane(-1);
-            }
-            else if(Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                ChangeLane(1);
-            }
+            horizontalInputController.HorizontalInput += ChangeLane;
         }
 
         private void ChangeLane(int value)

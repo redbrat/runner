@@ -5,7 +5,7 @@ namespace Source.Game.Player
 {
     public class PlayerChangeLaneBehaviour : MonoBehaviour
     {
-        [Inject] private readonly PlayerInputController playerInputController;
+        [Inject] private readonly ChangeLaneController playerInputController;
         
         [SerializeField] private float leftLaneXPosition = -2;
         [SerializeField] private float centralLaneXPosition = 0;

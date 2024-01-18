@@ -5,7 +5,7 @@ namespace Source.Game.Player
 {
     public class PlayerAnimationsController : MonoBehaviour
     {
-        [Inject] private readonly PlayerInputController playerInputController;
+        [Inject] private readonly ChangeLaneController playerInputController;
         [Inject] private readonly GameManager gameManager;
 
         private readonly int movingBool = Animator.StringToHash("Moving");

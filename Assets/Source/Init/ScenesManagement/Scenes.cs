@@ -2,7 +2,7 @@ namespace Source.Init.ScenesManagement
 {
     public static class Scenes
     {
-        public const int MENU = 4;
-        public const int GAME = 5;
+        public const int MENU = 1;
+        public const int GAME = 2;
     }
 }
