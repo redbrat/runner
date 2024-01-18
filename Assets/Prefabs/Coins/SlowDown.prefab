@@ -9489,6 +9489,8 @@ GameObject:
   - component: {fileID: 4150053215021990589}
   - component: {fileID: 5501054807523567118}
   - component: {fileID: 1904743710268339402}
+  - component: {fileID: 6686176746836601123}
+  - component: {fileID: 6966777303003754277}
   m_Layer: 8
   m_Name: SlowDown
   m_TagString: Untagged
@@ -9548,6 +9550,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDuration: 2
+--- !u!114 &6686176746836601123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907256217136288086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 6966777303003754277}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &6966777303003754277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907256217136288086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab867cc2cf56caf44b39a9613f14617e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowDownDuration: 5
+  slowDownValue: 1
 --- !u!1 &9183744655560780589
 GameObject:
   m_ObjectHideFlags: 0

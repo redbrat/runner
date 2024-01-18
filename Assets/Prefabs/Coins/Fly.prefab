@@ -4814,6 +4814,8 @@ GameObject:
   - component: {fileID: 5760668978275492507}
   - component: {fileID: 5803182846982394472}
   - component: {fileID: 6819627356988531270}
+  - component: {fileID: 2173991141445514939}
+  - component: {fileID: 1617808083599468092}
   m_Layer: 10
   m_Name: Fly
   m_TagString: Untagged
@@ -4875,6 +4877,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDuration: 2
+--- !u!114 &2173991141445514939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243419222714825406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 1617808083599468092}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &1617808083599468092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243419222714825406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca28fdb4bd258b419d24bfd4ab9bb64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyDuration: 10
+  altitudeValue: 3
 --- !u!1 &9214578752446272475
 GameObject:
   m_ObjectHideFlags: 0

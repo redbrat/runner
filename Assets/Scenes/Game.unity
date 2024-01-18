@@ -1685,6 +1685,7 @@ GameObject:
   - component: {fileID: 442506812}
   - component: {fileID: 442506811}
   - component: {fileID: 442506813}
+  - component: {fileID: 442506814}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -1707,6 +1708,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 442506813}
+  - {fileID: 442506814}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1757,12 +1759,24 @@ MonoBehaviour:
     type: 2}
   coinVisualsConfiguration: {fileID: 11400000, guid: 198610fa69a116c428aad8b12254a3ee,
     type: 2}
+  trackSection: {fileID: 5277567596644196494, guid: 9bad89a097428e0428a6a70c63ff0ce2,
+    type: 3}
   trackSegmentConfigurations:
   - {fileID: 1257963605197323149, guid: 9623381f15a87e0449aaf87af0f20080, type: 3}
   - {fileID: 1061749496169780995, guid: cca33141d82622141aa3f3cc031691b1, type: 3}
   - {fileID: 1631043829592936502, guid: 65895fb2d5cdbd04598f0d01cc250978, type: 3}
-  trackSection: {fileID: 5277567596644196494, guid: 9bad89a097428e0428a6a70c63ff0ce2,
-    type: 3}
+--- !u!114 &442506814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442506810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f6ee9d47e4e2048ac3a73b46025052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &500359208
 GameObject:
   m_ObjectHideFlags: 0

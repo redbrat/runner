@@ -5,7 +5,7 @@ namespace Source.View.Game
 {
     public class GameSceneManager : MonoBehaviour
     {
-        [Inject] private readonly IFactory<int, Track> trackFactory;
+        [Inject] private readonly IFactory<int, Track.Track> trackFactory;
         
         private void Start()
         {

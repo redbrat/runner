@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Source.View.Game.Coins;
 using UnityEngine;
 
 namespace Source.View.Game.Configuration

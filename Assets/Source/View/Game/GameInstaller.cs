@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Source.View.Game.Coins;
 using Source.View.Game.Configuration;
+using Source.View.Game.Track;
 using UnityEngine;
 using Zenject;
 
@@ -15,7 +17,7 @@ namespace Source.View.Game
         
         public override void InstallBindings()
         {
-            Container.Bind<IFactory<int, Track>>().To<Track.Factory>().AsSingle();
+            Container.Bind<IFactory<int, Track.Track>>().To<Track.Track.Factory>().AsSingle();
             Container.BindInstance(coinFrequencyConfigurationColder.Configuration);
             Container.BindInstance(trackRoot);
             Container.BindInstance(trackSegmentConfigurations);
