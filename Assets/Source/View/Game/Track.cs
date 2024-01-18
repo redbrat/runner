@@ -10,13 +10,14 @@ namespace Source.View.Game
 
         private readonly TrackSection[] trackSections;
         
-        public Track(int trackLength)
+        private Track(int trackLength)
         {
             trackSections = new TrackSection[trackLength];
         }
         
         public void ShowSections(int minSection, int maxSection)
         {
+            var currentDelta = 0f;
             for (var i = 0; i < trackSections.Length; i++)
             {
                 if (i < minSection || i > maxSection)
@@ -28,8 +29,21 @@ namespace Source.View.Game
                 }
                 else
                 {
-                    trackSections[i] = sectionsPool.Spawn(i);
+                    var newSegment = sectionsPool.Spawn(currentDelta);
+                    trackSections[i] = newSegment;
+                    currentDelta += newSegment.GetSectionLength();
                 }
+            }
+        }
+        
+        [UsedImplicitly]
+        public class Factory : IFactory<int, Track>
+        {
+            [Inject] private readonly DiContainer diContainer;
+            
+            public Track Create(int trackLength)
+            {
+                return diContainer.Instantiate<Track>(new object[] { trackLength });
             }
         }
     }

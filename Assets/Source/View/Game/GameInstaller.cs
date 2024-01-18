@@ -8,17 +8,21 @@ namespace Source.View.Game
     public class GameInstaller : MonoInstaller
     {
         [SerializeField] private Transform trackRoot;
+        [SerializeField] private CoinFrequencyConfiguration.Holder coinFrequencyConfigurationColder;
         [SerializeField] private CoinVisualsConfiguration coinVisualsConfiguration;
+        [SerializeField] private TrackSection trackSection;
         [SerializeField] private List<TrackSegmentConfiguration> trackSegmentConfigurations;
         
         public override void InstallBindings()
         {
+            Container.Bind<IFactory<int, Track>>().To<Track.Factory>().AsSingle();
+            Container.BindInstance(coinFrequencyConfigurationColder.Configuration);
             Container.BindInstance(trackRoot);
             Container.BindInstance(trackSegmentConfigurations);
             Container
                 .BindMemoryPool<TrackSection, TrackSection.Pool>()
                 .WithInitialSize(10)
-                .AsSingle();
+                .FromComponentInNewPrefab(trackSection);
             BindCoinsPool(coinVisualsConfiguration.SimpleCoinPrefab, CoinTypes.Simple, 40);
             BindCoinsPool(coinVisualsConfiguration.FlyCoinPrefab, CoinTypes.Fly, 2);
             BindCoinsPool(coinVisualsConfiguration.SlowDownCoinPrefab, CoinTypes.SlowDown, 2);
@@ -31,8 +35,7 @@ namespace Source.View.Game
                 .BindMemoryPool<CoinView, CoinView.Pool>()
                 .WithId(coinType)
                 .WithInitialSize(initialPoolSize)
-                .FromComponentInNewPrefab(coinPrefab)
-                .AsSingle();
+                .FromComponentInNewPrefab(coinPrefab);
         }
     }
 }

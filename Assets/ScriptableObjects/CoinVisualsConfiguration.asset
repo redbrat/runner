@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6052574f899d62f49bfc90df612dccca, type: 3}
   m_Name: CoinVisualsConfiguration
   m_EditorClassIdentifier: 
-  simpleCoinPrefab: {fileID: 0}
-  speedUpCoinPrefab: {fileID: 0}
-  slowDownCoinPrefab: {fileID: 0}
-  flyCoinPrefab: {fileID: 0}
+  simpleCoinPrefab: {fileID: 6425928071682618650, guid: d6ce67c0209ff014999d38e9590f0226,
+    type: 3}
+  speedUpCoinPrefab: {fileID: 2574596224323612292, guid: bdc918bf7dc3f354fa0a8995391d7f7e,
+    type: 3}
+  slowDownCoinPrefab: {fileID: 7907256217136288086, guid: e5aad111c5510ac49ada4d695d330439,
+    type: 3}
+  flyCoinPrefab: {fileID: 8243419222714825406, guid: 7a2ec8fcdc23c8a47949eb62b3c4a4a4,
+    type: 3}

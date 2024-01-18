@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CoinFrequencyConfigurationHolder
   m_EditorClassIdentifier: Assembly-CSharp:Source.View.Game.Configuration:CoinFrequencyConfiguration/Holder
   configuration:
-    simpleCoinFraction: 0
-    speedUpCoinFraction: 0
-    slowDownCoinFraction: 0
-    flyCoinFraction: 0
+    simpleCoinFraction: 94
+    speedUpCoinFraction: 2
+    slowDownCoinFraction: 2
+    flyCoinFraction: 2

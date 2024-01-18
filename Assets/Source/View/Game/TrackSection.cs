@@ -21,16 +21,19 @@ namespace Source.View.Game
                 Quaternion.identity, transform);
         }
 
+        public float GetSectionLength()
+        {
+            return segmentInstance.SectionLength;
+        }
+
         private void SpawnCoins(List<CoinView.Pool> coinPools)
         {
             segmentInstance.SpawnCoins(coinPools);
         }
 
         [UsedImplicitly]
-        public class Pool : MonoMemoryPool<int, TrackSection>
+        public class Pool : MonoMemoryPool<float, TrackSection>
         {
-            private const float SECTION_SIZE = 28f;
-            
             private readonly List<CoinView.Pool> coinPools;
             
             [Inject] private readonly Transform trackParent;
@@ -66,11 +69,11 @@ namespace Source.View.Game
                 base.OnCreated(item);
             }
 
-            protected override void OnSpawned(TrackSection item)
+            protected override void Reinitialize(float deltaZ, TrackSection item)
             {
                 var itemTransform = item.transform;
                 itemTransform.SetParent(trackParent);
-                itemTransform.localPosition = Vector3.forward * SECTION_SIZE;
+                itemTransform.localPosition = Vector3.forward * deltaZ;
                 item.SpawnCoins(coinPools);
                 base.OnSpawned(item);
             }

@@ -404,7 +404,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607555416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: GameOver
         m_Mode: 1
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607555416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: QuitToLoadout
         m_Mode: 1
@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607555416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: Pause
         m_Mode: 6
@@ -1491,6 +1491,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253208127}
   m_CullTransparentMesh: 0
+--- !u!1 &325444902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325444903}
+  m_Layer: 0
+  m_Name: TrackRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &325444903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325444902}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &326228784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,6 +1684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 442506812}
   - component: {fileID: 442506811}
+  - component: {fileID: 442506813}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -1673,7 +1705,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 442506813}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1707,6 +1740,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &442506813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442506810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da3d2e824f91494cbc12002806963cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackRoot: {fileID: 325444903}
+  coinFrequencyConfigurationColder: {fileID: 11400000, guid: 86aa0869534d3b841838582cbd0fdf05,
+    type: 2}
+  coinVisualsConfiguration: {fileID: 11400000, guid: 198610fa69a116c428aad8b12254a3ee,
+    type: 2}
+  trackSegmentConfigurations:
+  - {fileID: 1257963605197323149, guid: 9623381f15a87e0449aaf87af0f20080, type: 3}
+  - {fileID: 1061749496169780995, guid: cca33141d82622141aa3f3cc031691b1, type: 3}
+  - {fileID: 1631043829592936502, guid: 65895fb2d5cdbd04598f0d01cc250978, type: 3}
+  trackSection: {fileID: 5277567596644196494, guid: 9bad89a097428e0428a6a70c63ff0ce2,
+    type: 3}
 --- !u!1 &500359208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,7 +2035,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 607555415}
-  - component: {fileID: 607555416}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -2011,46 +2066,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &607555416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607555414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a98b047c94c1bd244aa98ab8962433fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  canvas: {fileID: 0}
-  trackManager: {fileID: 0}
-  gameTheme: {fileID: 8300000, guid: b341b9410b3c5274e8b15199f3b95fb5, type: 3}
-  coinText: {fileID: 32248608}
-  premiumText: {fileID: 53172156}
-  scoreText: {fileID: 659533716}
-  distanceText: {fileID: 247680508}
-  multiplierText: {fileID: 1409243986}
-  countdownText: {fileID: 2044062992}
-  powerupZone: {fileID: 1532641905}
-  lifeRectTransform: {fileID: 944929875}
-  pauseMenu: {fileID: 1657527601}
-  wholeUI: {fileID: 1760698591}
-  pauseButton: {fileID: 214538805}
-  inventoryIcon: {fileID: 500359209}
-  gameOverPopup: {fileID: 119608164}
-  premiumForLifeButton: {fileID: 2050759334}
-  adsForLifeButton: {fileID: 729908034}
-  premiumCurrencyOwned: {fileID: 807988734}
-  PowerupIconPrefab: {fileID: 102596, guid: 94cb557246c11d14388842cc08be79a8, type: 3}
-  tutorialValidatedObstacles: {fileID: 2004297569}
-  sideSlideTuto: {fileID: 562068171}
-  upSlideTuto: {fileID: 1786375232}
-  downSlideTuto: {fileID: 171553855}
-  finishTuto: {fileID: 1825154535}
-  adsPlacementId: reviveVideo
-  adsRewarded: 1
 --- !u!1 &659533712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,7 +2225,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607555416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: ShowRewardedAd
         m_Mode: 1
@@ -3284,7 +3299,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607555416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: Resume
         m_Mode: 1
@@ -4350,7 +4365,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607555416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: FinishTutorial
         m_Mode: 1
@@ -5528,7 +5543,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607555416}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: PremiumForLife
         m_Mode: 1
@@ -5734,3 +5749,4 @@ SceneRoots:
   - {fileID: 1621393393}
   - {fileID: 442506812}
   - {fileID: 1318862333}
+  - {fileID: 325444903}
