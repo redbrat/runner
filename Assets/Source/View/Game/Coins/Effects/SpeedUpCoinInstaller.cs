@@ -1,18 +1,17 @@
 using System.Collections.Generic;
-using UnityEngine;
+using Source.View.Game.Configuration;
 using Zenject;
 
 namespace Source.View.Game.Coins.Effects
 {
     public class SpeedUpCoinInstaller : MonoInstaller
     {
-        [SerializeField] private float speedUpDuration = 5f;
-        [SerializeField] private float speedUpValue = 1f;
-
+        [Inject] private readonly SpeedsAndAltitudesConfiguration configuration;
+        
         public override void InstallBindings()
         {
             Container.Bind<IEnumerable<ICoinEffect>>()
-                .FromInstance(new[] { new SlowDownEffect(speedUpDuration, speedUpValue) });
+                .FromInstance(new[] { new SpeedUpEffect(configuration.SpeedUpDuration, configuration.SpeedUpValue) });
         }
     }
 }

@@ -9,8 +9,9 @@ namespace Source.View.Game
 {
     public class GameInstaller : MonoInstaller
     {
+        [SerializeField] private SpeedsAndAltitudesConfiguration speedsAndAltitudesConfiguration;
         [SerializeField] private Transform trackRoot;
-        [SerializeField] private CoinFrequencyConfigurationHolder coinFrequencyConfigurationColder;
+        [SerializeField] private CoinFrequencyConfiguration coinFrequencyConfiguration;
         [SerializeField] private CoinVisualsConfiguration coinVisualsConfiguration;
         [SerializeField] private TrackSection trackSection;
         [SerializeField] private List<TrackSegmentConfiguration> trackSegmentConfigurations;
@@ -18,7 +19,8 @@ namespace Source.View.Game
         public override void InstallBindings()
         {
             Container.Bind<IFactory<int, Track.Track>>().To<Track.Track.Factory>().AsSingle();
-            Container.BindInstance(coinFrequencyConfigurationColder.Configuration);
+            Container.BindInstance(coinFrequencyConfiguration);
+            Container.BindInstance(speedsAndAltitudesConfiguration);
             Container.BindInstance(trackRoot);
             Container.BindInstance(trackSegmentConfigurations);
             Container

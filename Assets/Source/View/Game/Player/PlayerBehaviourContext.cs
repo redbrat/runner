@@ -7,6 +7,12 @@ namespace Source.View.Game.Player
     {
         public float Altitude { get; private set; }
         public float Speed { get; private set; }
+
+        public PlayerBehaviourContext(float initialSpeed, float initialAltitude)
+        {
+            Altitude = initialAltitude;
+            Speed = initialSpeed;
+        }
         
         public void SetSpeed(float newSpeed)
         {

@@ -1,18 +1,17 @@
 using System.Collections.Generic;
-using UnityEngine;
+using Source.View.Game.Configuration;
 using Zenject;
 
 namespace Source.View.Game.Coins.Effects
 {
     public class FlyCoinInstaller : MonoInstaller
     {
-        [SerializeField] private float flyDuration = 10f;
-        [SerializeField] private float altitudeValue = 3f;
+        [Inject] private readonly SpeedsAndAltitudesConfiguration configuration;
 
         public override void InstallBindings()
         {
             Container.Bind<IEnumerable<ICoinEffect>>()
-                .FromInstance(new[] { new SlowDownEffect(flyDuration, altitudeValue) });
+                .FromInstance(new[] { new FlyEffect(configuration.FlyDuration, configuration.FlyAltitudeValue) });
         }
     }
 }

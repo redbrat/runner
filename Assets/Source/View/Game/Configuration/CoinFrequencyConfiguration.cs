@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 namespace Source.View.Game.Configuration
 {
-    [Serializable]
-    public class CoinFrequencyConfiguration
+    [CreateAssetMenu(menuName = "Configs/" + nameof(CoinFrequencyConfiguration), fileName = nameof(CoinFrequencyConfiguration), order = 0)]
+    public class CoinFrequencyConfiguration : ScriptableObject
     {
         public int SimpleCoinFraction => simpleCoinFraction;
         [SerializeField] private int simpleCoinFraction;

@@ -9,9 +9,9 @@ namespace Source.View.Game.Player
     {
         [Inject] private readonly PlayerBehaviourContext context;
         
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider collider)
         {
-            var coinView = collision.gameObject.GetComponent<CoinView>();
+            var coinView = collider.GetComponent<CoinView>();
             if (coinView == null)
             {
                 return;
