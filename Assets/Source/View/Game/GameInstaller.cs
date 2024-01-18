@@ -10,7 +10,7 @@ namespace Source.View.Game
     public class GameInstaller : MonoInstaller
     {
         [SerializeField] private Transform trackRoot;
-        [SerializeField] private CoinFrequencyConfiguration.Holder coinFrequencyConfigurationColder;
+        [SerializeField] private CoinFrequencyConfigurationHolder coinFrequencyConfigurationColder;
         [SerializeField] private CoinVisualsConfiguration coinVisualsConfiguration;
         [SerializeField] private TrackSection trackSection;
         [SerializeField] private List<TrackSegmentConfiguration> trackSegmentConfigurations;

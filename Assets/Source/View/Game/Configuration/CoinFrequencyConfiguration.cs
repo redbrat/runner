@@ -14,12 +14,5 @@ namespace Source.View.Game.Configuration
         [SerializeField] private int slowDownCoinFraction;
         public int FlyCoinFraction => flyCoinFraction;
         [SerializeField] private int flyCoinFraction;
-        
-        [CreateAssetMenu(menuName = "Configs/" + nameof(CoinFrequencyConfiguration) + nameof(Holder), fileName = nameof(CoinFrequencyConfiguration) + nameof(Holder), order = 0)]
-        public class Holder : ScriptableObject
-        {
-            public CoinFrequencyConfiguration Configuration => configuration;
-            [SerializeField] private CoinFrequencyConfiguration configuration;
-        }
     }
 }
