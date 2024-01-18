@@ -18,7 +18,7 @@ namespace Source.View.Game
         
         public override void InstallBindings()
         {
-            Container.Bind<IFactory<int, Track.Track>>().To<Track.Track.Factory>().AsSingle();
+            Container.Bind<GameModel>().AsSingle();
             Container.BindInstance(coinFrequencyConfiguration);
             Container.BindInstance(speedsAndAltitudesConfiguration);
             Container.BindInstance(trackRoot);

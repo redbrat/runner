@@ -16,7 +16,9 @@ namespace Source.View.Game.Player
             {
                 return;
             }
-
+            
+            coinView.Consume();
+            
             var effects = coinView.Effects;
             if (effects == null)
             {

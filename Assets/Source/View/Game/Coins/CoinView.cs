@@ -7,6 +7,8 @@ namespace Source.View.Game.Coins
 {
     public class CoinView : MonoBehaviour
     {
+        [Inject] private readonly GameModel gameModel;
+        
         [SerializeField, Tooltip("360 rotation time")] private float rotationDuration = 2f;
 
         public IEnumerable<ICoinEffect> Effects => effects;
@@ -15,6 +17,12 @@ namespace Source.View.Game.Coins
         private void Update()
         {
             transform.Rotate(Vector3.up, Time.deltaTime * (360 / rotationDuration));
+        }
+
+        public void Consume()
+        {
+            gameObject.SetActive(false);
+            gameModel.Add1Score();
         }
 
         [UsedImplicitly]

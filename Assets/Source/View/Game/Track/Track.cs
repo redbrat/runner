@@ -6,9 +6,15 @@ namespace Source.View.Game.Track
     [UsedImplicitly]
     public class Track
     {
+        public float CurrentFarthestSectionDelta => currentFarthestSectionDelta;
+        public float CurrentNearestSectionDelta => currentNearestSectionDelta;
+        
         [Inject] private readonly TrackSection.Pool sectionsPool;
 
         private readonly TrackSection[] trackSections;
+        
+        private float currentFarthestSectionDelta;
+        private float currentNearestSectionDelta;
         
         private Track(int trackLength)
         {
@@ -17,33 +23,23 @@ namespace Source.View.Game.Track
         
         public void ShowSections(int minSection, int maxSection)
         {
-            var currentDelta = 0f;
             for (var i = 0; i < trackSections.Length; i++)
             {
                 if (i < minSection || i > maxSection)
                 {
                     if (trackSections[i] != null)
                     {
+                        currentNearestSectionDelta += trackSections[i].GetSectionLength();
                         sectionsPool.Despawn(trackSections[i]);
+                        trackSections[i] = null;
                     }
                 }
-                else
+                else if (trackSections[i] == null)
                 {
-                    var newSegment = sectionsPool.Spawn(currentDelta);
+                    var newSegment = sectionsPool.Spawn(currentFarthestSectionDelta);
                     trackSections[i] = newSegment;
-                    currentDelta += newSegment.GetSectionLength();
+                    currentFarthestSectionDelta += newSegment.GetSectionLength();
                 }
-            }
-        }
-        
-        [UsedImplicitly]
-        public class Factory : IFactory<int, Track>
-        {
-            [Inject] private readonly DiContainer diContainer;
-            
-            public Track Create(int trackLength)
-            {
-                return diContainer.Instantiate<Track>(new object[] { trackLength });
             }
         }
     }
