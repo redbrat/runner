@@ -6,7 +6,8 @@ namespace Source.Game.Player
     public class PlayerAnimationsController : MonoBehaviour
     {
         [Inject] private readonly PlayerInputController playerInputController;
-        
+        [Inject] private readonly GameManager gameManager;
+
         private readonly int movingBool = Animator.StringToHash("Moving");
         private readonly int laneSwitchInt = Animator.StringToHash("LaneSwitch");
 
@@ -19,12 +20,19 @@ namespace Source.Game.Player
 
         private void OnEnable()
         {
+            gameManager.GameFinished += OnGameFinished;
             playerInputController.LaneChanged += OnLaneChanged;
         }
 
         private void OnDisable()
         {
             playerInputController.LaneChanged -= OnLaneChanged;
+            gameManager.GameFinished -= OnGameFinished;
+        }
+
+        private void OnGameFinished()
+        {
+            animator.SetBool(movingBool, false);
         }
 
         private void OnLaneChanged(int newLane)

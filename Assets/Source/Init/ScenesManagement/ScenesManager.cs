@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
 
-namespace Source.View.Init.ScenesManagement
+namespace Source.Init.ScenesManagement
 {
     [UsedImplicitly]
     public class ScenesManager

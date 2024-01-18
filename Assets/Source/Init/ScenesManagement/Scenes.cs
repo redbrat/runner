@@ -1,4 +1,4 @@
-namespace Source.View.Init.ScenesManagement
+namespace Source.Init.ScenesManagement
 {
     public static class Scenes
     {

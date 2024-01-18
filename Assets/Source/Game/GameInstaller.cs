@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Source.Game.Coins;
 using Source.Game.Configuration;
 using Source.Game.Track;
+using Source.Game.UI;
 using UnityEngine;
 using Zenject;
 
@@ -18,6 +19,7 @@ namespace Source.Game
         
         public override void InstallBindings()
         {
+            Container.Bind<GameManager>().AsSingle();
             Container.Bind<GameModel>().AsSingle();
             Container.BindInstance(coinFrequencyConfiguration);
             Container.BindInstance(speedsAndAltitudesConfiguration);

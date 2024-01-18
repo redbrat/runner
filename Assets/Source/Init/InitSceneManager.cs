@@ -1,8 +1,8 @@
-using Source.View.Init.ScenesManagement;
+using Source.Init.ScenesManagement;
 using UnityEngine;
 using Zenject;
 
-namespace Source.View.Init
+namespace Source.Init
 {
     public class InitSceneManager : MonoBehaviour
     {

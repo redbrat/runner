@@ -1,8 +1,8 @@
-using Source.View.Init.ScenesManagement;
+using Source.Init.ScenesManagement;
 using UnityEngine;
 using Zenject;
 
-namespace Source.View.Menu
+namespace Source.Menu
 {
     public class StartButtonController : MonoBehaviour
     {

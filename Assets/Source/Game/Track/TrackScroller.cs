@@ -11,6 +11,7 @@ namespace Source.Game.Track
         public event Action<float> DistanceChanged; 
 
         [Inject] private readonly PlayerBehaviourContext playerBehaviourContext;
+        [Inject] private readonly GameManager gameManager;
 
         [SerializeField] private Transform trackTransform;
 
@@ -23,6 +24,10 @@ namespace Source.Game.Track
 
         private void Update()
         {
+            if (gameManager.GameIsFinished == true)
+            {
+                return;
+            }
             currentPosition = new Vector3(currentPosition.x, -playerBehaviourContext.Altitude,
                 currentPosition.z - Time.deltaTime * playerBehaviourContext.Speed);
             trackTransform.position = currentPosition;

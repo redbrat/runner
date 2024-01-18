@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Source.View.Menu
+namespace Source.Menu
 {
     public class CatRotator : MonoBehaviour
     {

@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Source.Game.UI;
 using Zenject;
 
 namespace Source.Game.Track
@@ -11,12 +12,13 @@ namespace Source.Game.Track
         
         [Inject] private readonly TrackSection.Pool sectionsPool;
 
-        private readonly TrackSection[] trackSections;
+        private TrackSection[] trackSections;
         
         private float currentFarthestSectionDelta;
         private float currentNearestSectionDelta;
         
-        private Track(int trackLength)
+        [Inject]
+        private void Init([Inject(Id = "TrackLength")] int trackLength)
         {
             trackSections = new TrackSection[trackLength];
         }

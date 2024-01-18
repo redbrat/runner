@@ -1,7 +1,7 @@
-using Source.View.Init.ScenesManagement;
+using Source.Init.ScenesManagement;
 using Zenject;
 
-namespace Source.View.Init
+namespace Source.Init
 {
     public class InitSceneInstaller : MonoInstaller
     {

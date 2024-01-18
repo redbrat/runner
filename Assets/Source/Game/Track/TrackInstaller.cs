@@ -11,10 +11,10 @@ namespace Source.Game.Track
         public override void InstallBindings()
         {
             Container.BindInstance(trackScroller);
+            Container.Bind<int>().WithId("TrackLength").FromInstance(trackSectionsLength);
             Container
-                .Bind<Source.Game.Track.Track>()
+                .Bind<Track>()
                 .AsSingle()
-                .WithArguments(trackSectionsLength)
                 .NonLazy();
         }
     }
